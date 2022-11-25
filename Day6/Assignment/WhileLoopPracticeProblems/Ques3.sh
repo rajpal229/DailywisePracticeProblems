@@ -1,25 +1,39 @@
 #Program Incomplete
 
+#while [[ h -le 11 && t -le 11 ]]
+#do
+#flip=$((Random%2));
 
-h=0;
-t=0;
+#if [ $flip == 0 ]
+#then
+#	h=$(($h+1))
+#else
+#	t=$(($t+1))
+#fi
+#done
 
-while [ $h -lt 11 ] || [ $t -lt 11 ]
+#if [ $h == 11 ]
+#then
+#	echo "Head Wins 11 times"
+#elif [ $t == 11 ]
+#then
+#	echo "Tail Wins 11 times"
+#fi
+
+head=0;
+tail=0;
+
+for (( i=1; head<=5; i++ )) && (( i=1; tail<=5; i++ ))
 do
-flip=$((Random%2));
+flip=$((RANDOM%2))
 
-if [ $flip -eq 0 ]
+if [ $flip == 0 ]
 then
-	(($h++))
+	echo "Heads"
+	((head++))
 else
-	(($t++))
+	echo "Tails"
+	((tail++))
 fi
 done
-
-if [ $h -eq 11 ]
-then
-	echo "Head Wins 11 times"
-elif [ $t -eq 11 ]
-then
-	echo "Tail Wins 11 times"
-fi
+echo "$head times head won and $tail times tail won"
