@@ -10,33 +10,37 @@ max=$((${R[0]}));
 
 echo ${R[@]}
 
-if [ ${R[1]} -gt $max ]
+if [ ${R[0]} -gt ${R[1]} ] && [ ${R[0]} -gt ${R[2]} ] && [ ${R[0]} -gt ${R[3]} ] && [ ${R[0]} -gt ${R[4]} ]
 then
-	max=$((${R[1]}));
-elif [ ${R[2]} -gt $max ]
+        echo "${R[0]} is maximum"
+elif [ ${R[1]} -gt ${R[0]} ] && [ ${R[1]} -gt ${R[2]} ] && [ ${R[1]} -gt ${R[3]} ] && [ ${R[1]} -gt ${R[4]} ]
 then
-	max=$((${R[2]}));
-elif [ ${R[3]} -gt $max ]
+        echo "${R[1]} is maximum"
+elif [ ${R[2]} -gt ${R[0]} ] && [ ${R[2]} -gt ${R[1]} ] && [ ${R[2]} -gt ${R[3]} ] && [ ${R[2]} -gt ${R[4]} ]
 then
-	max=$((${R[3]}));
-elif [ ${R[4]} -gt $max ]
+        echo "${R[2]} is maximum"
+elif [ ${R[3]} -gt ${R[0]} ] && [ ${R[3]} -gt ${R[1]} ] && [ ${R[3]} -gt ${R[2]} ] && [ ${R[3]} -gt ${R[4]} ]
 then
-	max=$((${R[4]}));
+        echo "${R[3]} is maximum"
+elif [ ${R[4]} -gt ${R[0]} ] && [ ${R[4]} -gt ${R[1]} ] && [ ${R[4]} -gt ${R[2]} ] && [ ${R[4]} -gt ${R[3]} ]
+then
+        echo "${R[4]} is maximum"
 fi
 
-if [ ${R[1]} -lt $min ]
-then
-	min=$((${R[1]}));
-elif [ ${R[2]} -lt $min ]
-then
-	min=$((${R[2]}));
-elif [ ${R[3]} -lt $min ]
-then
-	min=$((${R[3]}));
-elif [ ${R[4]} -lt $min ]
-then
-	min=$((${R[4]}));
-fi
 
-echo "maximum number is: "$max
-echo "minimum number is: "$min
+if [ ${R[0]} -lt ${R[1]} ] && [ ${R[0]} -lt ${R[2]} ] && [ ${R[0]} -lt ${R[3]} ] && [ ${R[0]} -lt ${R[4]} ]
+then
+        echo "${R[0]} is minimum"
+elif [ ${R[1]} -lt ${R[0]} ] && [ ${R[1]} -lt ${R[2]} ] && [ ${R[1]} -lt ${R[3]} ] && [ ${R[1]} -lt ${R[4]} ]
+then
+        echo "${R[1]} is minimum"
+elif [ ${R[2]} -lt ${R[0]} ] && [ ${R[2]} -lt ${R[1]} ] && [ ${R[2]} -lt ${R[3]} ] && [ ${R[2]} -lt ${R[4]} ]
+then
+        echo "${R[2]} is minimum"
+elif [ ${R[3]} -lt ${R[0]} ] && [ ${R[3]} -lt ${R[1]} ] && [ ${R[3]} -lt ${R[2]} ] && [ ${R[3]} -lt ${R[4]} ]
+then
+        echo "${R[3]} is minimum"
+elif [ ${R[4]} -lt ${R[0]} ] && [ ${R[4]} -lt ${R[1]} ] && [ ${R[4]} -lt ${R[2]} ] && [ ${R[4]} -lt ${R[3]} ]
+then
+        echo "${R[4]} is minimum"
+fi
